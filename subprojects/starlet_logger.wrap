@@ -1,0 +1,7 @@
+[wrap-git]
+url = https://github.com/starlet-engine/logger.git
+revision = main
+depth = 1
+
+[provide]
+starlet_logger = starlet_logger_dep
