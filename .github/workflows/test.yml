@@ -7,13 +7,33 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  test-cmake:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Configure CMake
         run: cmake -B build -DBUILD_TESTS=ON
+
       - name: Build
         run: cmake --build build --config Release
+
       - name: Run tests
         run: ctest --test-dir build -C Release --output-on-failure
+
+  test-meson:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Meson and Ninja
+        run: pip install meson ninja
+
+      - name: Configure Meson
+        run: meson setup build -Dbuild_tests=true
+
+      - name: Build
+        run: meson compile -C build
+
+      - name: Run tests
+        run: meson test -C build --verbose
