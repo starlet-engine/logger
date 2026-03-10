@@ -5,6 +5,10 @@
 
 build/
 
+# Meson subproject downloads
+subprojects/*/
+subprojects/packagecache/
+
 # User-specific files
 *.rsuser
 *.suo
