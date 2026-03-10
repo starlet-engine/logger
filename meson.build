@@ -10,7 +10,7 @@ sources = files(
   'src/logger.cpp'
 )
 
-starlet_logger_lib = library('starlet_logger', sources, 
+starlet_logger_lib = static_library('starlet_logger', sources, 
   include_directories : inc
 )
 

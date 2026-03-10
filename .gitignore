@@ -8,6 +8,7 @@ build/
 # Meson subproject downloads
 subprojects/*/
 subprojects/packagecache/
+subprojects/.wraplock
 
 # User-specific files
 *.rsuser
